@@ -1,0 +1,128 @@
+﻿@model IEnumerable<WebApplication1.Models.NominationForm>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <h2>Nominations</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nominator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.schoolDistrict)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.relationship)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nominee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.graduationDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.accepted.Value == true)
+            {
+                <tr class="bg-success">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nominator)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.schoolDistrict)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.relationship)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nominee)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.contactInfo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.graduationDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+            else
+            {
+                <hr />
+                <tr class="bg-">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nominator)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.schoolDistrict)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.relationship)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nominee)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.contactInfo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.graduationDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                        @Html.ActionLink("Accept", "Accepted", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+}

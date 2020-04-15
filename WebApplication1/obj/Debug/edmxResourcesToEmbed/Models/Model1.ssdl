@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NominationFormModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="NominationForm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nominator" Type="ntext" Nullable="false" />
+    <Property Name="email" Type="ntext" Nullable="false" />
+    <Property Name="schoolDistrict" Type="ntext" Nullable="false" />
+    <Property Name="position" Type="ntext" Nullable="false" />
+    <Property Name="relationship" Type="ntext" Nullable="false" />
+    <Property Name="nominee" Type="ntext" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="contactInfo" Type="ntext" Nullable="false" />
+    <Property Name="graduationDate" Type="ntext" Nullable="false" />
+    <Property Name="accepted" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="NominationFormModelStoreContainer">
+    <EntitySet Name="NominationForm" EntityType="Self.NominationForm" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

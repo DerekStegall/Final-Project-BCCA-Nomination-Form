@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NominationFormModel1StoreContainer" CdmEntityContainer="NominationFormEntities2">
+    <EntitySetMapping Name="StudentApplications">
+      <EntityTypeMapping TypeName="NominationFormModel1.StudentApplication">
+        <MappingFragment StoreEntitySet="StudentApplication">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="currentSchool" ColumnName="currentSchool" />
+          <ScalarProperty Name="eligible" ColumnName="eligible" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="graduationDate" ColumnName="graduationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,52 @@
+﻿
+@model WebApplication1.Models.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Login", "NominationForms", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Mvc Simple Login Application Demo</legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+        <table>
+            @foreach (var user in Model)
+            {
+            <tr>
+                <td>@Html.LabelFor(a => user.userName)</td>
+                <td>@Html.TextBoxFor(a => user.userName)</td>
+                <td>@Html.ValidationMessageFor(a => user.userName)</td>
+            </tr>
+
+            <tr>
+              
+                    <td>
+                        @Html.LabelFor(a => user.password)
+                    </td>
+                    <td>
+                        @Html.PasswordFor(a => user.password)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(a => user.password)
+                    </td>
+            </tr>
+            }
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+}
